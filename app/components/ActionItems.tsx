@@ -6,22 +6,34 @@ import {
   ListItemIcon,
   ListItemText,
   Box,
+  Chip,
 } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import PendingIcon from '@mui/icons-material/Pending';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-
-interface Action {
-  id: number;
-  status: 'pending' | 'completed';
-  description: string;
-}
+import { ActionItem as ActionItemType } from '../types/analysis';
 
 interface ActionItemsProps {
-  actions: Action[];
+  items: ActionItemType[];
 }
 
-export function ActionItems({ actions }: ActionItemsProps) {
+export function ActionItems({ items }: ActionItemsProps) {
+  console.log('ActionItems received props:', { items });
+
+  if (!items || items.length === 0) {
+    return (
+      <Paper sx={{ p: 3, height: '100%' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
+          <AssignmentIcon color="primary" />
+          <Typography variant="h6">
+            Action Items
+          </Typography>
+        </Box>
+        <Typography color="text.secondary">
+          No action items found
+        </Typography>
+      </Paper>
+    );
+  }
+
   return (
     <Paper sx={{ p: 3, height: '100%' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
@@ -30,11 +42,10 @@ export function ActionItems({ actions }: ActionItemsProps) {
           Action Items
         </Typography>
       </Box>
-
       <List>
-        {actions.map((action) => (
+        {items.map((action, index) => (
           <ListItem
-            key={action.id}
+            key={index}
             sx={{
               border: 1,
               borderColor: 'divider',
@@ -42,16 +53,32 @@ export function ActionItems({ actions }: ActionItemsProps) {
               mb: 1,
             }}
           >
-            <ListItemIcon>
-              {action.status === 'completed' ? (
-                <CheckCircleIcon color="success" />
-              ) : (
-                <PendingIcon color="warning" />
-              )}
-            </ListItemIcon>
             <ListItemText
-              primary={action.description}
-              secondary={action.status.charAt(0).toUpperCase() + action.status.slice(1)}
+              primary={
+                <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                  <Typography variant="body1">{action.description}</Typography>
+                </Box>
+              }
+              secondary={
+                <Box sx={{ mt: 1 }}>
+                  <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', flexWrap: 'wrap' }}>
+                    <Chip
+                      label={`Owner: ${action.owner}`}
+                      size="small"
+                      color="primary"
+                      variant="outlined"
+                    />
+                    {action.due_date && (
+                      <Chip
+                        label={`Due: ${action.due_date}`}
+                        size="small"
+                        color="secondary"
+                        variant="outlined"
+                      />
+                    )}
+                  </Box>
+                </Box>
+              }
             />
           </ListItem>
         ))}

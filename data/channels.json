@@ -1,0 +1,2367 @@
+{
+  "channels": [
+    {
+      "id": "C8NFKT8HF",
+      "name": "random",
+      "topic": {
+        "value": "Non-work banter and water cooler conversation",
+        "creator": "U8NBEMDB2",
+        "last_set": 1515239749
+      },
+      "purpose": {
+        "value": "A place for non-work-related flimflam, faffing, hodge-podge or jibber-jabber you'd prefer to keep out of more focused work-related channels.",
+        "creator": "U8NBEMDB2",
+        "last_set": 1515239749
+      },
+      "memberCount": 155,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C8P2DTE84",
+      "name": "general",
+      "topic": {
+        "value": "Company-wide announcements and work-based matters",
+        "creator": "U8NBEMDB2",
+        "last_set": 1515239749
+      },
+      "purpose": {
+        "value": "This channel is for workspace-wide communication and announcements. All members are in this channel.",
+        "creator": "U8NBEMDB2",
+        "last_set": 1515239749
+      },
+      "memberCount": 156,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C8QUC4NCD",
+      "name": "external-ps",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CA7AATF2P",
+      "name": "hw-contentmarketing",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Share ideas on social media, blogs, and general cool things we should talk about",
+        "creator": "U95NKAS74",
+        "last_set": 1523881618
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CCPR07BT8",
+      "name": "team-zimmet-pulse",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Channel for team members to collaborate on PULSE",
+        "creator": "U8UBF4LJ1",
+        "last_set": 1539828611
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CDPTZFUP5",
+      "name": "hw-ux-design",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Channel to collaborate on UX and design",
+        "creator": "U8UBF4LJ1",
+        "last_set": 1540693882
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CEK6RB6GJ",
+      "name": "team-ics-smartsheet",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Log changes to requirements smartsheet",
+        "creator": "U8UBF4LJ1",
+        "last_set": 1543944574
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CELEDRQVC",
+      "name": "zeus_team_internal",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CFA8KH6LD",
+      "name": "hatchworks-opps",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Sales opportunities chat",
+        "creator": "UEHV89U1G",
+        "last_set": 1547055829
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CFHNHLL81",
+      "name": "team-ics-jira",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Provide JIRA notifications",
+        "creator": "U8UBF4LJ1",
+        "last_set": 1547997550
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CFX74N4KT",
+      "name": "hatchworks-design",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Internal design team channel",
+        "creator": "UAJ680MFW",
+        "last_set": 1549310953
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CFYJBLZS7",
+      "name": "case_itt0198227",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "general questions",
+        "creator": "UFEDWPV63",
+        "last_set": 1549384521
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CGFCG4LCU",
+      "name": "clemenger-uat",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CGT9NP2DV",
+      "name": "team-ics-dev",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "ICS Developers Group",
+        "creator": "U8PG48T8T",
+        "last_set": 1551986805
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CHWPDEXJT",
+      "name": "dynamicrt-dev",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Development team for the DynamicRT application",
+        "creator": "U9V8A24HX",
+        "last_set": 1554986533
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CK01YRT5Y",
+      "name": "engineering",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 19,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "CTCDFKNDR",
+      "name": "wa-deployments",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "WealthAbility Deployment Jobs",
+        "creator": "U9V8A24HX",
+        "last_set": 1581085692
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C010HHX884X",
+      "name": "covid19-givingback",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C011WSCMS90",
+      "name": "hw-sdet",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C012BH2BJM7",
+      "name": "engineering-qa",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "HatchWorks Engineering QA",
+        "creator": "UG0TUNM1A",
+        "last_set": 1587046754
+      },
+      "memberCount": 4,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C012DCKAH9V",
+      "name": "cinch-build-notifications",
+      "topic": {
+        "value": "<http://cinch-dev-codecoverage.s3-website-us-east-1.amazonaws.com/>",
+        "creator": "UU60SCXFC",
+        "last_set": 1604927623
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 4,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C012FUP11A9",
+      "name": "team-project-sh-tech",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C01CEH33B1U",
+      "name": "ce_sales_colaboration",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C01L7208AHY",
+      "name": "proximity-peru-team",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Proximity team located in Perú",
+        "creator": "U010BJD9UHH",
+        "last_set": 1611849388
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C01LRK46281",
+      "name": "error",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "temporal",
+        "creator": "UV0C43NGZ",
+        "last_set": 1611947441
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C01UC44BQ7M",
+      "name": "sh-automated-test",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Spring Hills Cypress Dashboard Notification",
+        "creator": "UUNPQUR5W",
+        "last_set": 1618432479
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C01UXF0CR7C",
+      "name": "frontend-framework-creation",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Exploration of modular / templated component frameworks that can be leveraged for rapid front end application design and development.",
+        "creator": "UG0TUNM1A",
+        "last_set": 1618958041
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C01V9CF1M3Q",
+      "name": "hatch-assessment-builder",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Assessment / Forms Builder",
+        "creator": "UG0TUNM1A",
+        "last_set": 1619457248
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C020F17KSC9",
+      "name": "covision-assessment-thread",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "A thread to host all communication related to our ongoing analysis and rethinking of the CoVision approach.",
+        "creator": "UQAPT7ACA",
+        "last_set": 1619460688
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C02C28FQAHH",
+      "name": "team-cox-data-workshop",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C02H0PKAV6W",
+      "name": "bug-ticket-cinch",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C02HLPE1WER",
+      "name": "hatch-latam",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "US channel for all things HW LatAm",
+        "creator": "U8QR0P25D",
+        "last_set": 1634155109
+      },
+      "memberCount": 39,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C034B2E7JCS",
+      "name": "hatch-cryptos",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "This is a place to talk about cryptos and blockchains, news, trends and more.",
+        "creator": "UUNPQUR5W",
+        "last_set": 1645628493
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C037KE0SVTK",
+      "name": "recruitersonly",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "A place where we can chat about things important/funny to us.",
+        "creator": "U035VMWES2Z",
+        "last_set": 1647375043
+      },
+      "memberCount": 5,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C0394BGG7K9",
+      "name": "salesexecsearch",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C039BQEUXK7",
+      "name": "hatch-hr-skills-base",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Skills Base Software Platform Implementation &amp; Management Discussion",
+        "creator": "UG0TUNM1A",
+        "last_set": 1648683087
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03EW5JRWT0",
+      "name": "engineering_myfloc",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03J27YCU06",
+      "name": "hw-engineering",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "This is the General channel for the engineering team",
+        "creator": "U036R1XR34H",
+        "last_set": 1654289342
+      },
+      "memberCount": 97,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03JYLU7ZAL",
+      "name": "hw-colombia-temporal",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Hola Hatchers. Este canal es temporal para coordinar visita de Brandon, necesito hacerles una consultas para definir la logistica. Gracias!",
+        "creator": "UV0C43NGZ",
+        "last_set": 1654290456
+      },
+      "memberCount": 9,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03KBT6NDP1",
+      "name": "engineering-full-stack-developers",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 6,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03KL0SBF9C",
+      "name": "engineering-cloud_devops-team",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03KWAJ2F24",
+      "name": "brasil",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 24,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03MS7AS3N0",
+      "name": "hw-peru-temporal",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Buen dia, se crea este canal temporal para coordinar una visita de Brandon en Agosto 2022 y ademas detalles del hatch giving.",
+        "creator": "UV0C43NGZ",
+        "last_set": 1656521531
+      },
+      "memberCount": 5,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03NPNPETMG",
+      "name": "mex-hatch-futures",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Donacion",
+        "creator": "U03GDHY2CCT",
+        "last_set": 1657212061
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03NPPCKXGS",
+      "name": "brasil-hatch-future",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Donation",
+        "creator": "U03GDHY2CCT",
+        "last_set": 1657212335
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03PDG4PLGG",
+      "name": "rd-hatch-futures",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Donacion",
+        "creator": "U03GDHY2CCT",
+        "last_set": 1657212254
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03PHV2E0TY",
+      "name": "hatch-solutions-consulting",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03Q3QW6SBA",
+      "name": "offering_agile_consulting",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C03TQ545EBY",
+      "name": "myfloc-tech-team",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C040FBXRA7P",
+      "name": "coin-leaders",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Leaders of Community of Interest",
+        "creator": "U036R1XR34H",
+        "last_set": 1661966836
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C041QKX5D8V",
+      "name": "imaginex-team-eng",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 4,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C041TFUGN1X",
+      "name": "coin-cloud",
+      "topic": {
+        "value": "Communities of Interest - Cloud",
+        "creator": "USD1R90L8",
+        "last_set": 1677256746
+      },
+      "purpose": {
+        "value": "We just wanted to say hi and welcome to the COIN- Cloud Community\nThe idea is to build together a place to share discuss, learn, debate, etc. together and improve, growing as a professional and personal experience.",
+        "creator": "USD1R90L8",
+        "last_set": 1677256711
+      },
+      "memberCount": 35,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C0435ABFPGE",
+      "name": "hw-qa-team",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 9,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C043JA0T422",
+      "name": "hw-career-talks-for-hatchfutures",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C045V1QKMHC",
+      "name": "davingreen-project",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C045Z6DN2TE",
+      "name": "team-hbh",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "HBH project Conversation",
+        "creator": "U03MRGZSC4W",
+        "last_set": 1665432702
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C046E42G4PQ",
+      "name": "cinch-test",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C046WBE3VUG",
+      "name": "atlanta-lunch-bunch",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "channel for the lunch bunch to discuss lunch options around Atlanta",
+        "creator": "U8QR0P25D",
+        "last_set": 1665580074
+      },
+      "memberCount": 10,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C048U4HPWNM",
+      "name": "hw-colombia-taxes",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 16,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04AYGTQSQY",
+      "name": "hw-devops-team",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 8,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04B044NDEK",
+      "name": "davinproject",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04B4GCV29K",
+      "name": "worldcup",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04B8PXNJ4R",
+      "name": "love-is-blind",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Channel created for Latam recruiters to discuss the Netflix reality tv show",
+        "creator": "U02CYP3FGQL",
+        "last_set": 1668458164
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04BQNECRLL",
+      "name": "engineering-big-data",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 13,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04E113MG75",
+      "name": "coin-software-development",
+      "topic": {
+        "value": "Contribute to the growth of Hatchers in different skills, promote career development, supply knowledge bases and support in solving complex tasks so that they can help HatchWorks reach the big rocks.",
+        "creator": "U0399V5BPFH",
+        "last_set": 1670358805
+      },
+      "purpose": {
+        "value": "Welcome to Software Development COIN. This community has been created with the aim of sharing knowledge for developers.",
+        "creator": "U0399V5BPFH",
+        "last_set": 1670358766
+      },
+      "memberCount": 30,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04F90WBG83",
+      "name": "contractor-agreement",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "channel to discuss an contractor agreement renewals",
+        "creator": "U8QR0P25D",
+        "last_set": 1671047133
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04J34KAZLP",
+      "name": "clients-tech-stack",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 13,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04N845JE0Y",
+      "name": "dev-pwc-ist",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04NV92FESW",
+      "name": "product-talent-portal",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 10,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04PKGA82TV",
+      "name": "talent-portal-build-notifications",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Talent Portal AWS Code Pipeline Build Notifications",
+        "creator": "U010DDZ5E1F",
+        "last_set": 1694036755
+      },
+      "memberCount": 8,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04RWTMEU2J",
+      "name": "coin-gaming-development",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "This is a community to start a practice of gaming Development in HW, so please suscribe to this channel if you are want to be pat of this COIN.",
+        "creator": "U03MRGZSC4W",
+        "last_set": 1677776840
+      },
+      "memberCount": 11,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04TAPNPJ21",
+      "name": "raving-social-fans",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Raving-social-fans\" is a Slack channel for HatchWorks team members to coordinate personal brands &amp; boost our team's LinkedIn presence. We'll share best practices on creating engaging content &amp; building networks.",
+        "creator": "U038ULCT8Q4",
+        "last_set": 1678465692
+      },
+      "memberCount": 155,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04TPKEELG7",
+      "name": "new-technology-and-tools",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "place to discuss new technologies and tools",
+        "creator": "U8QR0P25D",
+        "last_set": 1678899630
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04TT1NTNEQ",
+      "name": "hatchworks-customer-research",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Channel dedicated to \"why they buy\" research conversations where we talk to won and lost deals to understand how they think.",
+        "creator": "U9E2FFDMF",
+        "last_set": 1678732552
+      },
+      "memberCount": 74,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C04U04X9E1J",
+      "name": "team-rola-hw",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Place for team members from Uruguay, Bolivia, Ecuador, El Salvador and Guatemala",
+        "creator": "U8QR0P25D",
+        "last_set": 1678821657
+      },
+      "memberCount": 6,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C050ULB3HEW",
+      "name": "hatchworks-solutions-toolbox",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Solutions Toolbox coordination and discussion",
+        "creator": "UG4HMMBB6",
+        "last_set": 1680098572
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C050VFBG3G8",
+      "name": "hw-soft-skills",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "This channel is for promoting the development of soft skills among the Engineering team.",
+        "creator": "U04EN66TZ2Q",
+        "last_set": 1679669623
+      },
+      "memberCount": 17,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C05104F58CD",
+      "name": "tevora-progress-jeff",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Channel for following progress on Tevora project",
+        "creator": "U03R2TUQC59",
+        "last_set": 1680195301
+      },
+      "memberCount": 0,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C052GK0NT7F",
+      "name": "dealflow",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Tracking deal flow into Proposal stage and higher",
+        "creator": "U04TG84B1UP",
+        "last_set": 1681161633
+      },
+      "memberCount": 11,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C053C0VJF25",
+      "name": "coin-qa",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C054QBAKS06",
+      "name": "cox-sciot-team",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Collaboration space for Hatchers working on the Cox SCIOT team",
+        "creator": "UFXKELX7V",
+        "last_set": 1682452754
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C056C5T4UUD",
+      "name": "cox-iot-resources",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Cox IoT Peeps",
+        "creator": "UCTRZ4XB6",
+        "last_set": 1683296809
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C057XNCNF9T",
+      "name": "hatch-growth-inbound",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 11,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C05QUKTPG4X",
+      "name": "lead-gen",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 8,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C05RCHVRX3M",
+      "name": "lead-gen-build-notifications",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 10,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C05S7EZJC65",
+      "name": "liceo-del-sur-visita",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 4,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C05SKDU8D7H",
+      "name": "health-gym-multispa",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C05UNKZT5H6",
+      "name": "visitas-ucr",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 5,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C05VA8UGZ0D",
+      "name": "hatchfutures-cr",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 4,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C062M1MR16F",
+      "name": "mejenga",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 8,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C06GL8212EA",
+      "name": "nextgen-training-ai",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Our platform is a cutting-edge GPT-powered training solution designed for new employees and team members keen on acquiring new skills.",
+        "creator": "U04NALK5VNG",
+        "last_set": 1706816309
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C06HQ84SNR5",
+      "name": "ai-champions",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 144,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C06JS650F7C",
+      "name": "javascript-data-structure-and-algorithms",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C06KHEFG7MY",
+      "name": "team-clearway-pullpoio",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 9,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C06UEFEV02F",
+      "name": "ai-coding-tools",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 6,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C06UL5ELC75",
+      "name": "clearway-build-notifications-qa",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 4,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C0701DZ1DU3",
+      "name": "bizdev-bjss-marinerfinance",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C073UKC3EEN",
+      "name": "hatch-growth-leads-mqls",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C075YGZU01E",
+      "name": "clearway-alerts-notifications-dev",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 9,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C077FE2FG91",
+      "name": "clearway-build-notifications-dev",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 9,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C0789K2BX9S",
+      "name": "ai-school",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 21,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C078HB2PP8Q",
+      "name": "hw-gcp-certification-support-group",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 12,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C079136K41Z",
+      "name": "hatch-website-visits",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 9,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07AJCCEFNX",
+      "name": "clearway-build-notifications-stg",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 4,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07AJFW9C74",
+      "name": "clearway-build-notifications-prod",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 6,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07CGNAQFEE",
+      "name": "clearway-alerts-notifications-stg",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 9,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07CVC9K2BB",
+      "name": "clearway-alerts-notifications-prod",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 8,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07D5G0K8N4",
+      "name": "clearway-alerts-notifications-qa",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 8,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07G30ECB1R",
+      "name": "shoutouts-and-good-vibes",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Rules:\n1. Celebrate your team members. Tag them and share your shoutout\n2. If you would like to share some good news about yourself, go for it!\n3. Keep it positive!",
+        "creator": "U035VMWES2Z",
+        "last_set": 1723136310
+      },
+      "memberCount": 152,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07GZNM1WN8",
+      "name": "temp-bizdev-rapido",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07H4DTAU4S",
+      "name": "nearshoreworks-growth-inbound",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07HXDALACT",
+      "name": "marine_corps_ai_event",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07JVN4NDFE",
+      "name": "testing",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07KPCDKL93",
+      "name": "happy-healthy-hatcher",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Disclaimer:the information provided in this program is for general purposes only and does not replace professional advice.We recommend consulting experts for personalized guidance.The company is not liable for any outcomes from using this information",
+        "creator": "UV0C43NGZ",
+        "last_set": 1725656696
+      },
+      "memberCount": 122,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07KQPY5RC7",
+      "name": "team-helios-engineers",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 2,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07LKHJVBUP",
+      "name": "hach-it-test",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 1,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07NDMT9ZGR",
+      "name": "hw-databricks-certification-support-group",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 30,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07QHH57E3E",
+      "name": "nfr-estimation",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Planning poker for NFR P2 project.\n\nStory pointing is a technique used in Agile to estimate the effort and complexity of user stories.\n\nIt’s a relative measure, meaning you compare tasks to each other rather than giving exact hours.",
+        "creator": "U04NPFK6W4F",
+        "last_set": 1728312139
+      },
+      "memberCount": 10,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07R6SWD84W",
+      "name": "employee-points-poc",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 4,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07T0KCK2JX",
+      "name": "labs-hatchy-halloween",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 38,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07VB931BDG",
+      "name": "coin-data-engineering",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Data Engineering is the designing, building, and maintaining of data pipelines: the infrastructure and systems that extract, transform, evaluate, and load data, according to business needs.",
+        "creator": "U07EQ3Q66CX",
+        "last_set": 1730997832
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C0809SDG2UR",
+      "name": "coin-data-architecture",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Data Architecture is the design of an organization's data ecosystem, including data stores (OLTP, OLAP), query patterns (Graph, Event), and schema design.",
+        "creator": "U07EQ3Q66CX",
+        "last_set": 1730997006
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C080L12AX8Q",
+      "name": "coin-data-governance",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Data Governance is the socio-technical practice of managing data's availability, usability, integrity, and security in an enterprise setting",
+        "creator": "U07EQ3Q66CX",
+        "last_set": 1730997318
+      },
+      "memberCount": 8,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C083QJUTJJY",
+      "name": "team-altas",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Let's use this channel for internal collaboration on the ALTAS AI project",
+        "creator": "U06GD62F7V5",
+        "last_set": 1733325877
+      },
+      "memberCount": 6,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C083SB9Q345",
+      "name": "bizdev-ai2-raas",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C085NBDK631",
+      "name": "team-datasquared",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 4,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C08958SAD5F",
+      "name": "bizdev-hueman",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C08961EMVJN",
+      "name": "team-anchorhealthcare",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 6,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C089K11QSGZ",
+      "name": "team-anchorhealth",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 5,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C08BHEADGBG",
+      "name": "team-sports-intel",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 9,
+      "isPrivate": true,
+      "isMember": true
+    },
+    {
+      "id": "C08EXV222FJ",
+      "name": "team-calebpearson",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": true
+    },
+    {
+      "id": "C08F3LCKA68",
+      "name": "labs-databricks-contracts",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 7,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C08FEHWSZJ6",
+      "name": "hatch-inbound-downloads",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 6,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C08G2HZP739",
+      "name": "gendd_summit",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 9,
+      "isPrivate": true,
+      "isMember": true
+    },
+    {
+      "id": "C06S7ASR50W",
+      "name": "hatchworks-hireez-support",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 5,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C087T66P2QY",
+      "name": "charter-refinement",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 15,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07EPGM4G5B",
+      "name": "ecloud-officepracticum-ext",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 14,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "C07TL4DFML7",
+      "name": "v0-hw",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "memberCount": 3,
+      "isPrivate": false,
+      "isMember": false
+    },
+    {
+      "id": "G01Q51KVCF7",
+      "name": "engineering-management",
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 0
+      },
+      "purpose": {
+        "value": "Engineering Management",
+        "creator": "UG0TUNM1A",
+        "last_set": 1614891659
+      },
+      "isPrivate": true,
+      "isMember": true
+    }
+  ],
+  "lastUpdated": 1743127309700
+}

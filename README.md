@@ -39,6 +39,9 @@ The Slack bot requires the following permissions:
 - mpim:history
 - channels:read
 - groups:read
+- channels:join
+- groups:write
+- channels:write
 
 ## How it Works
 

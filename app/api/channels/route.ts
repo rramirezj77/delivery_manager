@@ -1,255 +1,252 @@
 import { NextResponse } from 'next/server';
 import { WebClient } from '@slack/web-api';
+import fs from 'fs';
+import path from 'path';
+import { Channel } from '../../types/channel';
 
-async function verifySlackConfiguration(slack: WebClient) {
-  const diagnostics = {
-    token: {
-      configured: !!process.env.SLACK_BOT_TOKEN,
-      format: process.env.SLACK_BOT_TOKEN?.startsWith('xoxb-'),
-      length: process.env.SLACK_BOT_TOKEN?.length
-    },
-    clientId: {
-      configured: !!process.env.SLACK_CLIENT_ID,
-      format: process.env.SLACK_CLIENT_ID?.match(/^\d+\.\d+$/)
-    },
-    auth: null as any,
-    bot: null as any,
-    team: null as any,
-    channels: null as any,
-    apiCalls: [] as any[]
-  };
+const MAX_RETRIES = 3;
+const RETRY_DELAY = 2000; // 2 seconds between retries
+const DATA_DIR = path.join(process.cwd(), 'data');
+const CACHE_FILE = path.join(DATA_DIR, 'channels.json');
+const CACHE_UPDATE_INTERVAL = 60 * 60 * 1000; // 1 hour in milliseconds
 
-  try {
-    // Test authentication
-    console.log('Testing Slack authentication...');
-    const authTest = await slack.auth.test();
-    diagnostics.apiCalls.push({
-      method: 'auth.test',
-      ok: authTest.ok,
-      error: authTest.error
-    });
-    
-    diagnostics.auth = {
-      ok: authTest.ok,
-      team: authTest.team,
-      user: authTest.user,
-      team_id: authTest.team_id,
-      user_id: authTest.user_id,
-      bot_id: authTest.bot_id
-    };
-
-    if (!authTest.ok) {
-      throw new Error(`Auth test failed: ${authTest.error}`);
-    }
-
-    // Get bot info
-    console.log('Getting bot information...');
-    const botInfo = await slack.bots.info({ bot: authTest.bot_id });
-    diagnostics.apiCalls.push({
-      method: 'bots.info',
-      ok: botInfo.ok,
-      error: botInfo.error
-    });
-    
-    diagnostics.bot = {
-      ok: botInfo.ok,
-      id: botInfo.bot?.id,
-      name: botInfo.bot?.name,
-      scopes: botInfo.bot?.scopes,
-      is_app_user: botInfo.bot?.is_app_user,
-      deleted: botInfo.bot?.deleted
-    };
-
-    if (!botInfo.ok) {
-      throw new Error(`Failed to get bot info: ${botInfo.error}`);
-    }
-
-    // Test channel access with a simpler call first
-    console.log('Testing basic channel access...');
-    const basicChannelsResult = await slack.conversations.list({
-      exclude_archived: true,
-      types: 'public_channel',
-      limit: 1
-    });
-    
-    diagnostics.apiCalls.push({
-      method: 'conversations.list (basic)',
-      ok: basicChannelsResult.ok,
-      error: basicChannelsResult.error,
-      warning: basicChannelsResult.warning
-    });
-
-    if (!basicChannelsResult.ok) {
-      throw new Error(`Failed to list basic channels: ${basicChannelsResult.error}`);
-    }
-
-    // Test private channel access
-    console.log('Testing private channel access...');
-    const privateChannelsResult = await slack.conversations.list({
-      exclude_archived: true,
-      types: 'private_channel',
-      limit: 1
-    });
-    
-    diagnostics.apiCalls.push({
-      method: 'conversations.list (private)',
-      ok: privateChannelsResult.ok,
-      error: privateChannelsResult.error,
-      warning: privateChannelsResult.warning
-    });
-
-    if (!privateChannelsResult.ok) {
-      throw new Error(`Failed to list private channels: ${privateChannelsResult.error}`);
-    }
-
-    // Test channel history access
-    console.log('Testing channel history access...');
-    if (basicChannelsResult.channels?.[0]) {
-      try {
-        const historyResult = await slack.conversations.history({
-          channel: basicChannelsResult.channels[0].id,
-          limit: 1
-        });
-        
-        diagnostics.apiCalls.push({
-          method: 'conversations.history',
-          ok: historyResult.ok,
-          error: historyResult.error,
-          warning: historyResult.warning
-        });
-
-        if (!historyResult.ok) {
-          console.warn('Channel history access failed:', historyResult.error);
-          // Don't throw error, just log warning
-        }
-      } catch (error: any) {
-        console.warn('Channel history access failed:', error.message);
-        // Don't throw error, just log warning
-      }
-    }
-
-    // If we got this far, the basic configuration is working
-    return { success: true, diagnostics };
-  } catch (error: any) {
-    console.error('Slack configuration verification failed:', error);
-    return {
-      success: false,
-      error: error.message,
-      diagnostics
-    };
-  }
+interface ChannelCache {
+  channels: Channel[];
+  lastUpdated: number;
 }
 
-export async function GET(request: Request) {
-  try {
-    console.log('Searching channels with query:', request.url);
-    const { searchParams } = new URL(request.url);
-    const query = searchParams.get('q') || '';
+// Ensure the data directory exists
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
 
-    console.log('Initializing Slack client...');
-    const slack = new WebClient(process.env.SLACK_BOT_TOKEN);
+// Initialize or load the cache file
+if (!fs.existsSync(CACHE_FILE)) {
+  fs.writeFileSync(CACHE_FILE, JSON.stringify({ channels: [], lastUpdated: 0 }));
+}
 
-    // Verify configuration
-    const verification = await verifySlackConfiguration(slack);
-    if (!verification.success) {
-      console.error('Slack configuration verification failed:', verification);
-      return NextResponse.json({
-        error: verification.error,
-        details: {
-          diagnostics: verification.diagnostics
-        }
-      }, { status: 500 });
-    }
+async function fetchChannelsFromSlack(): Promise<any[]> {
+  const token = process.env.SLACK_BOT_TOKEN;
+  if (!token) {
+    console.error('SLACK_BOT_TOKEN is not set in environment variables');
+    throw new Error('SLACK_BOT_TOKEN is not set');
+  }
 
-    // List all channels with pagination
-    console.log('Fetching channels...');
-    let allChannels: any[] = [];
-    let cursor: string | undefined;
-    let retryCount = 0;
-    const maxRetries = 3;
-    
-    do {
-      try {
+  // Validate token format
+  if (!token.startsWith('xoxb-')) {
+    console.error('Invalid token format. Bot tokens should start with xoxb-');
+    throw new Error('Invalid token format');
+  }
+
+  console.log('Token validation:', {
+    hasToken: !!token,
+    tokenLength: token.length,
+    tokenStart: token.substring(0, 10),
+    tokenEnd: token.substring(token.length - 4),
+    tokenFormat: token.startsWith('xoxb-') ? 'valid' : 'invalid',
+    envVars: Object.keys(process.env).filter(key => key.includes('SLACK'))
+  });
+
+  const slack = new WebClient(token);
+  let retryCount = 0;
+  let allChannels: any[] = [];
+  let cursor: string | undefined;
+
+  while (retryCount < MAX_RETRIES) {
+    try {
+      console.log(`Attempting to fetch channels (attempt ${retryCount + 1}/${MAX_RETRIES})`);
+      
+      // First try to fetch public channels
+      do {
         const result = await slack.conversations.list({
-          exclude_archived: true,
           types: 'public_channel,private_channel',
+          exclude_archived: true,
           limit: 1000,
           cursor: cursor
         });
 
         if (!result.ok) {
-          throw new Error(`Failed to list channels: ${result.error}`);
+          console.error('Channels API error:', {
+            error: result.error,
+            response: result
+          });
+          throw new Error(`Failed to fetch channels: ${result.error}`);
         }
 
-        if (result.channels) {
-          allChannels = allChannels.concat(result.channels);
-        }
-
+        const channels = result.channels || [];
+        allChannels = [...allChannels, ...channels];
         cursor = result.response_metadata?.next_cursor;
-        if (cursor) {
-          console.log(`Fetching next page of channels with cursor: ${cursor}`);
-        }
 
-        // Reset retry count on successful request
-        retryCount = 0;
-      } catch (error: any) {
-        if (error.message?.includes('rate limit') && retryCount < maxRetries) {
-          console.log(`Rate limited, waiting 30 seconds before retry ${retryCount + 1}/${maxRetries}`);
-          await new Promise(resolve => setTimeout(resolve, 30000));
-          retryCount++;
-          continue;
-        }
-        throw error;
+        console.log('Fetched channels batch:', {
+          batchSize: channels.length,
+          hasMore: !!cursor,
+          memberChannels: channels.filter(c => c.is_member).length
+        });
+
+      } while (cursor);
+
+      console.log('Successfully fetched all channels:', {
+        total: allChannels.length,
+        private: allChannels.filter(c => c.is_private).length,
+        public: allChannels.filter(c => !c.is_private).length,
+        botMemberChannels: allChannels.filter(c => c.is_member).length,
+        membershipDetails: allChannels
+          .filter(c => c.is_member)
+          .map(c => ({
+            name: c.name,
+            isPrivate: c.is_private,
+            isMember: c.is_member
+          }))
+      });
+
+      return allChannels;
+    } catch (error: any) {
+      console.error(`Error fetching channels (attempt ${retryCount + 1}/${MAX_RETRIES}):`, {
+        message: error.message,
+        stack: error.stack,
+        response: error.response,
+        data: error.data
+      });
+      retryCount++;
+      
+      if (retryCount < MAX_RETRIES) {
+        await new Promise(resolve => setTimeout(resolve, RETRY_DELAY));
       }
-    } while (cursor);
+    }
+  }
 
-    const totalChannels = allChannels.length;
-    console.log(`Retrieved ${totalChannels} total channels`);
+  throw new Error('Failed to fetch channels after all retries');
+}
 
-    // Filter channels based on query
-    const channels = allChannels
-      .filter(channel => {
-        if (!query) return true;
-        const searchTerm = query.toLowerCase();
-        return (
-          channel.name?.toLowerCase().includes(searchTerm) ||
-          channel.topic?.value?.toLowerCase().includes(searchTerm) ||
-          channel.purpose?.value?.toLowerCase().includes(searchTerm)
-        );
-      })
-      .map(channel => ({
-        id: channel.id,
-        name: channel.name || '',
-        topic: channel.topic?.value || '',
-        purpose: channel.purpose?.value || '',
-        memberCount: channel.num_members || 0,
-        isPrivate: channel.is_private || false,
-        isMember: channel.is_member || false
-      }));
+async function updateChannelsCache() {
+  try {
+    console.log('Starting channels cache update...');
+    const channels = await fetchChannelsFromSlack();
+    
+    // Transform channels before caching
+    const transformedChannels = channels.map(transformChannelData);
+    
+    const cache: ChannelCache = {
+      channels: transformedChannels,
+      lastUpdated: Date.now()
+    };
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2));
+    console.log('Channels cache updated successfully');
+  } catch (error) {
+    console.error('Failed to update channels cache:', error);
+    throw error;
+  }
+}
 
-    return NextResponse.json({
-      channels,
-      debug: {
-        totalChannels,
-        accessibleChannels: channels.length,
-        query,
-        pagination: {
-          pages: Math.ceil(totalChannels / 1000),
-          lastCursor: cursor
-        }
+async function getChannelsFromCache(): Promise<any[]> {
+  const cacheContent = fs.readFileSync(CACHE_FILE, 'utf-8');
+  const cache: ChannelCache = JSON.parse(cacheContent);
+  return cache.channels;
+}
+
+function transformChannelData(channel: any) {
+  return {
+    id: channel.id,
+    name: channel.name,
+    topic: channel.topic,
+    purpose: channel.purpose,
+    memberCount: channel.num_members,
+    isPrivate: channel.is_private,
+    isMember: channel.is_member
+  };
+}
+
+export async function GET(request: Request) {
+  try {
+    console.log('Received channels API request');
+    const { searchParams } = new URL(request.url);
+    const query = searchParams.get('q')?.toLowerCase() || '';
+    const forceRefresh = searchParams.get('refresh') === 'true';
+    const showMembership = searchParams.get('membership') === 'true';
+
+    let channels;
+    
+    if (forceRefresh) {
+      console.log('Forced refresh requested, fetching fresh channels...');
+      channels = await fetchChannelsFromSlack();
+      
+      // Transform channels before caching
+      const transformedChannels = channels.map(transformChannelData);
+      
+      // Update cache with transformed data
+      const cache: ChannelCache = {
+        channels: transformedChannels,
+        lastUpdated: Date.now()
+      };
+      fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2));
+      console.log('Cache updated with fresh channels');
+      
+      channels = transformedChannels;
+    } else {
+      // Check if we need to update the cache
+      const cacheContent = fs.readFileSync(CACHE_FILE, 'utf-8');
+      const cache: ChannelCache = JSON.parse(cacheContent);
+      const timeSinceLastUpdate = Date.now() - cache.lastUpdated;
+
+      // If it's been more than an hour since the last update, update in the background
+      if (timeSinceLastUpdate > CACHE_UPDATE_INTERVAL) {
+        console.log('Cache is old, updating in background...');
+        updateChannelsCache().catch(console.error);
       }
+
+      // Get channels from cache (already transformed)
+      channels = await getChannelsFromCache();
+    }
+
+    // Sort channels: bot member channels first, then alphabetically by name
+    channels.sort((a, b) => {
+      // First sort by bot membership
+      if (a.isMember && !b.isMember) return -1;
+      if (!a.isMember && b.isMember) return 1;
+      // Then sort alphabetically
+      return a.name.localeCompare(b.name);
     });
+
+    // Filter channels based on the search query if one is provided
+    if (query) {
+      channels = channels.filter(channel => 
+        channel.name.toLowerCase().includes(query)
+      );
+    }
+
+    // If membership info is requested, show detailed information
+    if (showMembership) {
+      const memberChannels = channels.filter(c => c.isMember);
+      console.log('Bot membership details:', {
+        totalChannels: channels.length,
+        memberChannels: memberChannels.length,
+        memberChannelDetails: memberChannels.map(c => ({
+          name: c.name,
+          isPrivate: c.isPrivate,
+          memberCount: c.memberCount,
+          created: c.created
+        }))
+      });
+    }
+
+    console.log('Returning channels:', {
+      total: channels.length,
+      private: channels.filter(c => c.isPrivate).length,
+      public: channels.filter(c => !c.isPrivate).length,
+      query: query || 'none',
+      forceRefresh,
+      botMemberChannels: channels.filter(c => c.isMember).length
+    });
+
+    return NextResponse.json({ channels });
   } catch (error: any) {
-    console.error('Error fetching channels:', error);
-    return NextResponse.json({
-      error: error.message,
-      details: {
-        diagnostics: {
-          error: error.message,
-          code: error.code,
-          data: error.data
-        }
-      }
-    }, { status: 500 });
+    console.error('Error in channels API:', {
+      message: error.message,
+      stack: error.stack
+    });
+    return NextResponse.json(
+      { error: error.message || 'Failed to fetch channels' },
+      { status: 500 }
+    );
   }
 } 

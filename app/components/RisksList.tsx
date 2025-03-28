@@ -3,67 +3,95 @@ import {
   Typography,
   List,
   ListItem,
+  ListItemIcon,
   ListItemText,
-  Chip,
   Box,
+  Chip,
 } from '@mui/material';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-
-interface Risk {
-  id: number;
-  severity: 'high' | 'medium' | 'low';
-  description: string;
-}
+import WarningIcon from '@mui/icons-material/Warning';
+import { Risk } from '../types/risk';
 
 interface RisksListProps {
   risks: Risk[];
 }
 
 export function RisksList({ risks }: RisksListProps) {
-  const getSeverityColor = (severity: string) => {
-    switch (severity) {
+  console.log('RisksList received props:', { risks });
+
+  if (!risks || risks.length === 0) {
+    return (
+      <Paper sx={{ p: 3 }}>
+        <Typography variant="h6" gutterBottom>
+          Risks
+        </Typography>
+        <Typography color="text.secondary">
+          No risks identified in this channel.
+        </Typography>
+      </Paper>
+    );
+  }
+
+  const getSeverityColor = (severity: string): "error" | "warning" | "info" | "success" => {
+    switch (severity.toLowerCase()) {
       case 'high':
         return 'error';
       case 'medium':
         return 'warning';
       case 'low':
-        return 'success';
+        return 'info';
       default:
-        return 'default';
+        return 'success';
     }
   };
 
+  // Sort risks by severity (High -> Medium -> Low)
+  const sortedRisks = [...risks].sort((a, b) => {
+    const severityOrder: Record<string, number> = { high: 0, medium: 1, low: 2 };
+    const severityA = a.severity.toLowerCase();
+    const severityB = b.severity.toLowerCase();
+    return (severityOrder[severityA] ?? 3) - (severityOrder[severityB] ?? 3);
+  });
+
   return (
-    <Paper sx={{ p: 3, height: '100%' }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-        <ErrorOutlineIcon color="error" />
-        <Typography variant="h6">
-          Identified Risks
-        </Typography>
-      </Box>
-      
+    <Paper sx={{ p: 3 }}>
+      <Typography variant="h6" gutterBottom>
+        Risks
+      </Typography>
       <List>
-        {risks.map((risk) => (
-          <ListItem
-            key={risk.id}
-            sx={{
-              border: 1,
-              borderColor: 'divider',
-              borderRadius: 1,
-              mb: 1,
-            }}
-          >
-            <ListItemText
-              primary={risk.description}
-              secondary={
-                <Chip
-                  label={risk.severity.toUpperCase()}
-                  size="small"
-                  color={getSeverityColor(risk.severity) as 'error' | 'warning' | 'success' | 'default'}
-                  sx={{ mt: 1 }}
-                />
-              }
-            />
+        {sortedRisks.map((risk, index) => (
+          <ListItem key={index} sx={{ display: 'block', mb: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
+              <WarningIcon color={getSeverityColor(risk.severity)} sx={{ mt: 0.5 }} />
+              <Box sx={{ flex: 1 }}>
+                <Typography variant="body1" gutterBottom>
+                  {risk.description}
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+                  <Chip
+                    label={risk.severity}
+                    size="small"
+                    color={getSeverityColor(risk.severity)}
+                    variant="outlined"
+                  />
+                  {risk.suggested_owner && (
+                    <Chip
+                      label={`Owner: ${risk.suggested_owner}`}
+                      size="small"
+                      color="primary"
+                      variant="outlined"
+                    />
+                  )}
+                  {risk.status && (
+                    <Chip
+                      label={risk.status}
+                      size="small"
+                      color="default"
+                      variant="outlined"
+                    />
+                  )}
+                </Box>
+              </Box>
+            </Box>
           </ListItem>
         ))}
       </List>

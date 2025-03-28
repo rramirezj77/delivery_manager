@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   TextField,
   Autocomplete,
@@ -17,184 +17,194 @@ import {
   Button,
   InputAdornment,
   AlertTitle,
+  IconButton,
+  Tooltip,
 } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 import PublicIcon from '@mui/icons-material/Public';
 import ErrorIcon from '@mui/icons-material/Error';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import SearchIcon from '@mui/icons-material/Search';
+import RefreshIcon from '@mui/icons-material/Refresh';
 import debounce from 'lodash/debounce';
-
-interface Channel {
-  id: string;
-  name: string;
-  topic: string;
-  purpose: string;
-  memberCount: number;
-  isPrivate: boolean;
-  isMember: boolean;
-}
+import { Channel } from '../types/channel';
 
 interface ChannelSearchProps {
-  onChannelSelect: (channelName: string) => void;
-  onChannelsUpdate: (channels: Channel[]) => void;
+  onChannelSelect: (channel: Channel) => void;
+  selectedChannel?: Channel | null;
 }
 
-export default function ChannelSearch({ onChannelSelect, onChannelsUpdate }: ChannelSearchProps) {
+export default function ChannelSearch({ onChannelSelect, selectedChannel }: ChannelSearchProps) {
   const [channels, setChannels] = useState<Channel[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [debug, setDebug] = useState(false);
-  const [totalChannels, setTotalChannels] = useState(0);
-  const [accessibleChannels, setAccessibleChannels] = useState(0);
-  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [inputValue, setInputValue] = useState(selectedChannel?.name || '');
 
-  const fetchChannels = async (query: string = '') => {
+  // Function to fetch channels
+  const fetchChannels = useCallback(async (query: string = '', forceRefresh: boolean = false) => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       setError(null);
-      console.log('Searching channels with query:', query);
+      console.log('Fetching channels with query:', query, 'forceRefresh:', forceRefresh);
       
-      const response = await fetch(`/api/channels?q=${encodeURIComponent(query)}`);
+      const response = await fetch(`/api/channels?q=${encodeURIComponent(query)}&refresh=${forceRefresh}`);
       if (!response.ok) {
         throw new Error('Failed to fetch channels');
       }
       
       const data = await response.json();
-      console.log('Channels response:', data);
-      
-      // Sort channels with bot members first
-      const sortedChannels = data.channels.sort((a: Channel, b: Channel) => {
-        if (a.isMember && !b.isMember) return -1;
-        if (!a.isMember && b.isMember) return 1;
-        return 0;
+      console.log('Received channels:', {
+        total: data.channels.length,
+        query: query || 'none',
+        forceRefresh
       });
       
-      setChannels(sortedChannels);
-      onChannelsUpdate(sortedChannels);
-      setTotalChannels(data.totalChannels || 0);
-      setAccessibleChannels(data.accessibleChannels || 0);
-      setIsInitialLoad(false);
-    } catch (err: any) {
+      setChannels(data.channels);
+    } catch (err) {
       console.error('Error fetching channels:', err);
-      setError(err.message || 'Failed to fetch channels');
+      setError(err instanceof Error ? err.message : 'Failed to fetch channels');
     } finally {
-      setLoading(false);
+      setIsLoading(false);
+    }
+  }, []);
+
+  // Initial load of channels
+  useEffect(() => {
+    fetchChannels();
+  }, [fetchChannels]);
+
+  // Debounced search
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (inputValue !== selectedChannel?.name) {
+        fetchChannels(inputValue);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [inputValue, selectedChannel, fetchChannels]);
+
+  const handleRefresh = () => {
+    fetchChannels(inputValue, true);
+  };
+
+  const handleSelectionChange = (channel: Channel | null) => {
+    if (channel) {
+      onChannelSelect(channel);
     }
   };
 
-  useEffect(() => {
-    fetchChannels();
-  }, []);
-
-  return (
-    <Box sx={{ width: '100%', maxWidth: 600, mx: 'auto' }}>
-      <Autocomplete
-        options={channels}
-        getOptionLabel={(option) => `#${option.name}`}
-        onChange={(event, newValue) => {
-          if (newValue) {
-            onChannelSelect(newValue.name);
-          }
-        }}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Search channels"
-            variant="outlined"
-            fullWidth
-            onChange={(e) => {
-              const query = e.target.value;
-              if (query.startsWith('#')) {
-                fetchChannels(query.slice(1));
-              } else {
-                fetchChannels(query);
-              }
-            }}
-            InputProps={{
-              ...params.InputProps,
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              ),
-              endAdornment: (
-                <>
-                  {loading && (
-                    <CircularProgress size={20} sx={{ mr: 1 }} />
-                  )}
-                  {params.InputProps.endAdornment}
-                </>
-              ),
-            }}
-          />
-        )}
-        renderOption={(props, option) => (
-          <li {...props}>
-            <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-              <Box sx={{ flex: 1 }}>
-                <Typography variant="body1">#{option.name}</Typography>
-                {option.topic && (
-                  <Typography variant="caption" color="text.secondary">
-                    {option.topic}
-                  </Typography>
-                )}
-              </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+  const renderOption = (props: any, option: Channel) => {
+    const { key, ...otherProps } = props;
+    return (
+      <li key={key} {...otherProps}>
+        <ListItemIcon>
+          {option.isPrivate ? <LockIcon /> : <PublicIcon />}
+        </ListItemIcon>
+        <ListItemText
+          primary={option.name}
+          secondary={
+            <Box component="span">
+              <Typography component="span" variant="body2" color="text.secondary" display="block">
+                {option.topic?.value || 'No topic'}
+              </Typography>
+              <Typography component="span" variant="body2" color="text.secondary" display="block">
+                {option.purpose?.value || 'No purpose'}
+              </Typography>
+              <Box component="span" sx={{ mt: 1, display: 'flex', gap: 1 }}>
+                <Chip
+                  size="small"
+                  label={`${option.memberCount} members`}
+                  color="primary"
+                  variant="outlined"
+                />
                 {option.isMember ? (
                   <Chip
                     size="small"
-                    label="Bot is member"
+                    label="Member"
                     color="success"
+                    variant="outlined"
                     icon={<CheckCircleIcon />}
                   />
                 ) : (
                   <Chip
                     size="small"
-                    label="Bot not in channel"
-                    color="error"
+                    label="Not a member"
+                    color="warning"
+                    variant="outlined"
                     icon={<ErrorIcon />}
                   />
                 )}
-                <Typography variant="caption" color="text.secondary">
-                  {option.memberCount} members
-                </Typography>
               </Box>
             </Box>
-          </li>
-        )}
-        loading={loading}
-        loadingText="Loading channels..."
-        noOptionsText={error || "No channels found"}
-        sx={{
-          '& .MuiAutocomplete-listbox': {
-            maxHeight: 400,
-          },
-        }}
-      />
-      
-      {debug && (
-        <Alert severity="info" sx={{ mt: 2 }}>
-          <AlertTitle>Channel Information</AlertTitle>
-          <Typography variant="body2">
-            Total channels: {totalChannels}
-          </Typography>
-          <Typography variant="body2">
-            Accessible channels: {accessibleChannels}
-          </Typography>
-          <Typography variant="body2">
-            Search query: {channels.length > 0 ? channels[0].name : 'None'}
-          </Typography>
-        </Alert>
-      )}
-      
-      {isInitialLoad && (
-        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
-          <CircularProgress />
-        </Box>
-      )}
-      
-      {error && !isInitialLoad && (
+          }
+        />
+      </li>
+    );
+  };
+
+  return (
+    <Box sx={{ width: '100%' }}>
+      <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', mb: 2 }}>
+        <Autocomplete
+          value={selectedChannel || null}
+          onChange={(_, newValue) => handleSelectionChange(newValue)}
+          inputValue={inputValue}
+          onInputChange={(_, newValue) => setInputValue(newValue)}
+          options={channels}
+          loading={isLoading}
+          getOptionLabel={(option) => option.name}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Search channels"
+              placeholder="Type to search channels..."
+              InputProps={{
+                ...params.InputProps,
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon />
+                  </InputAdornment>
+                ),
+                endAdornment: (
+                  <>
+                    {isLoading ? <CircularProgress color="inherit" size={20} /> : null}
+                    {params.InputProps.endAdornment}
+                  </>
+                ),
+              }}
+            />
+          )}
+          renderOption={renderOption}
+          loadingText="Searching channels..."
+          noOptionsText={error || (inputValue ? "No channels found" : "Type to search channels")}
+          sx={{
+            flex: 1,
+            '& .MuiAutocomplete-listbox': {
+              maxHeight: 400,
+            },
+          }}
+          isOptionEqualToValue={(option, value) => option.id === value.id}
+        />
+        <Tooltip title="Refresh channels list">
+          <span>
+            <IconButton
+              onClick={handleRefresh}
+              color="primary"
+              disabled={isLoading}
+              sx={{ 
+                bgcolor: 'background.paper',
+                '&:hover': {
+                  bgcolor: 'action.hover',
+                },
+              }}
+            >
+              <RefreshIcon />
+            </IconButton>
+          </span>
+        </Tooltip>
+      </Box>
+      {error && (
         <Alert severity="error" sx={{ mt: 2 }}>
           {error}
         </Alert>
